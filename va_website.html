@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SJC Virtual | Professional Virtual Assistant Services</title>
+    <meta name="description" content="Reliable virtual assistant for busy entrepreneurs. Email management, bookkeeping, data entry & more. Available 9am-8pm PST. Quick turnaround guaranteed.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2563eb;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+        
+        .cta-button {
+            background: #2563eb;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #1d4ed8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        /* Trust Bar */
+        .trust-bar {
+            background: #f8fafc;
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .trust-bar p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #475569;
+            font-weight: 500;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            border-color: #2563eb;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+        
+        .service-card .price {
+            color: #2563eb;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .service-card ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card li {
+            padding: 0.5rem 0;
+            color: #475569;
+            display: flex;
+            align-items: start;
+        }
+        
+        .service-card li:before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 5rem 0;
+            background: #f8fafc;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .step {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #2563eb;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+        
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+        
+        .step p {
+            color: #64748b;
+        }
+        
+        /* Pricing Packages */
+        .pricing {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .pricing-card:hover {
+            border-color: #2563eb;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.15);
+        }
+        
+        .pricing-card.featured {
+            border-color: #2563eb;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            color: #2563eb;
+        }
+        
+        .pricing-card.featured .price {
+            color: white;
+        }
+        
+        .pricing-card .period {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        
+        .pricing-card.featured .period {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .pricing-card ul {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .pricing-card li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .pricing-card.featured li {
+            border-bottom-color: rgba(255,255,255,0.2);
+        }
+        
+        .pricing-card li:before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .pricing-card.featured li:before {
+            color: #a7f3d0;
+        }
+        
+        .pricing-btn {
+            background: #2563eb;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        
+        .pricing-card.featured .pricing-btn {
+            background: white;
+            color: #667eea;
+        }
+        
+        .pricing-btn:hover {
+            background: #1d4ed8;
+        }
+        
+        .pricing-card.featured .pricing-btn:hover {
+            background: #f8fafc;
+        }
+        
+        /* Portfolio */
+        .portfolio {
+            padding: 5rem 0;
+            background: #f8fafc;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .portfolio-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .portfolio-card h3 {
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-card p {
+            color: #475569;
+            line-height: 1.8;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-content p {
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .tools-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .tool-category {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .tool-category h4 {
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tool-category p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-item span {
+            font-size: 2rem;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: #94a3b8;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">SJC Virtual</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <a href="https://calendly.com/sjcvirtual" class="cta-button" target="_blank">Book Free Call</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>I Handle Your Admin Chaos<br>So You Can Focus on Growing Your Business</h1>
+            <p>Reliable virtual assistant for busy entrepreneurs & small business owners<br>Email management • Bookkeeping • Data entry • Content creation<br>Available 9am-8pm PST • Quick turnaround guaranteed</p>
+            <div class="hero-cta">
+                <a href="https://calendly.com/sjcvirtual" class="btn-primary" target="_blank">Schedule Free Consultation</a>
+                <a href="#services" class="btn-secondary">View Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <p>Trusted by entrepreneurs and small businesses since 2021</p>
+            <div class="trust-badges">
+                <div class="badge">⚡ 24-48 Hour Turnaround</div>
+                <div class="badge">✓ 50+ Projects Completed</div>
+                <div class="badge">🌎 Available 9am-8pm PST</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Services That Save You Hours Every Week</h2>
+            <p class="section-subtitle">Specialized support designed to keep your business running smoothly</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📧</div>
+                    <h3>Email & Calendar Management</h3>
+                    <div class="price">$13/hour</div>
+                    <ul>
+                        <li>Inbox zero system setup & maintenance</li>
+                        <li>Calendar scheduling & meeting coordination</li>
+                        <li>Travel booking & itinerary creation</li>
+                        <li>Priority email filtering & responses</li>
+                        <li>Meeting prep & follow-up notes</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Data Entry & Organization</h3>
+                    <div class="price">$13/hour</div>
+                    <ul>
+                        <li>Spreadsheet creation & data input</li>
+                        <li>Database management & cleanup</li>
+                        <li>Document organization & filing</li>
+                        <li>CRM updates & maintenance</li>
+                        <li>Research & data compilation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Bookkeeping & Invoicing</h3>
+                    <div class="price">$13/hour</div>
+                    <ul>
+                        <li>Invoice creation & tracking</li>
+                        <li>Expense tracking & reporting</li>
+                        <li>Receipt organization</li>
+                        <li>Payment follow-ups</li>
+                        <li>Basic financial reporting</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">✍️</div>
+                    <h3>Content Creation</h3>
+                    <div class="price">$13/hour</div>
+                    <ul>
+                        <li>Social media graphics (Canva)</li>
+                        <li>Presentation design</li>
+                        <li>Basic blog formatting</li>
+                        <li>Email newsletter templates</li>
+                        <li>Document formatting & editing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Get started in three simple steps</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Book a Free Call</h3>
+                    <p>We'll discuss your needs, pain points, and goals. No pressure, just understanding what you need.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Receive Your Proposal</h3>
+                    <p>I'll send you a clear proposal with deliverables, timeline, and pricing. Approve and we're ready to go.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Start Immediately</h3>
+                    <p>I begin working on your tasks right away. Expect results within 24-48 hours, with regular updates throughout.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Packages -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Flexible Pricing That Fits Your Budget</h2>
+            <p class="section-subtitle">Choose hourly rates or save with monthly packages</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>🥉 Starter</h3>
+                    <div class="price">$130<span class="period">/month</span></div>
+                    <ul>
+                        <li>10 hours of support</li>
+                        <li>Email & calendar management</li>
+                        <li>Basic data entry</li>
+                        <li>48-hour turnaround</li>
+                        <li>Email support</li>
+                    </ul>
+                    <a href="https://calendly.com/sjcvirtual" class="pricing-btn" target="_blank">Get Started</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3>🥈 Professional</h3>
+                    <div class="price">$260<span class="period">/month</span></div>
+                    <ul>
+                        <li>20 hours of support</li>
+                        <li>All Starter services</li>
+                        <li>Bookkeeping & invoicing</li>
+                        <li>Content creation</li>
+                        <li>24-hour turnaround</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="https://calendly.com/sjcvirtual" class="pricing-btn" target="_blank">Most Popular</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>🥇 Premium</h3>
+                    <div class="price">$520<span class="period">/month</span></div>
+                    <ul>
+                        <li>40 hours of support</li>
+                        <li>All Professional services</li>
+                        <li>Project management setup</li>
+                        <li>Advanced reporting</li>
+                        <li>Same-day turnaround</li>
+                        <li>Dedicated support</li>
+                    </ul>
+                    <a href="https://calendly.com/sjcvirtual" class="pricing-btn" target="_blank">Get Started</a>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem; color: #64748b;">
+                <strong>Hourly Rate:</strong> $13/hour (negotiable for ongoing work)<br>
+                All packages include flexible hours to match your time zone
+            </p>
+        </div>
+    </section>
+
+    <!-- Portfolio Highlights -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Real Results for Real Businesses</h2>
+            <p class="section-subtitle">Here's how I've helped clients save time and stay organized</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <h3>📊 Monday.com Board Optimization</h3>
+                    <p>Reorganized a 40+ column Monday.com board for a marketing agency to track leads and projects. Result: Cut update time by 50% and improved team visibility across all ongoing campaigns.</p>
+                </div>
+
+                <div class="portfolio-card">
+                    <h3>📧 Email Inbox Rescue</h3>
+                    <p>Managed email inbox for a clinical research center with 1,200+ unread messages. Within two weeks, reduced backlog to under 50 emails and implemented a sustainable inbox zero system.</p>
+                </div>
+
+                <div class="portfolio-card">
+                    <h3>📋 Research Dashboard Creation</h3>
+                    <p>Built a comprehensive research dashboard in Notion to centralize contract data for a consulting firm. Result: Faster invoicing, better tracking, and improved cash flow management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About SJC Virtual</h2>
+            <div class="about-content">
+                <p>I help businesses save hours and operate more efficiently by taking ownership of their admin, project, and client support tasks. My goal is to deliver fast, accurate work that frees you to focus on what matters most.</p>
+                
+                <p>Since 2021, I've provided end-to-end remote administrative support for U.S.-based clients, specializing in operations that keep businesses running smoothly. From managing complex calendars to optimizing project management systems, I bring both attention to detail and strategic thinking to every task.</p>
+                
+                <p>Before going fully remote, I spent over a year as an Operations Manager, where I directed day-to-day operations, managed vendor relationships, and developed SOPs that streamlined business processes. I also served as Executive Assistant to C-level executives, which taught me the importance of anticipating needs and maintaining confidentiality.</p>
+                
+                <p><strong>Working Hours:</strong> Available 9am-8pm PST, with flexible scheduling to match your time zone</p>
+                
+                <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; color: #1e293b;">Tools & Expertise</h3>
+                
+                <div class="tools-list">
+                    <div class="tool-category">
+                        <h4>Project Management</h4>
+                        <p>Monday.com, Trello, Asana, ClickUp</p>
+                    </div>
+                    
+                    <div class="tool-category">
+                        <h4>Communication</h4>
+                        <p>Gmail, Outlook, Slack, Zoom, Google Meet</p>
+                    </div>
+                    
+                    <div class="tool-category">
+                        <h4>File Management</h4>
+                        <p>Google Workspace, Microsoft Office, Dropbox</p>
+                    </div>
+                    
+                    <div class="tool-category">
+                        <h4>Creative Tools</h4>
+                        <p>Canva (graphics & presentations)</p>
+                    </div>
+                    
+                    <div class="tool-category">
+                        <h4>Organization</h4>
+                        <p>Notion, Airtable, basic Excel automation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Ready to Reclaim Your Time?</h2>
+            <p>Let's discuss how I can help streamline your business operations</p>
+            <a href="https://calendly.com/sjcvirtual" class="btn-primary" target="_blank" style="font-size: 1.2rem; padding: 1.2rem 2.5rem;">Schedule Your Free 15-Minute Call</a>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:sjcvirtual@gmail.com">sjcvirtual@gmail.com</a>
+                </div>
+                
+                <div class="contact-item">
+                    <span>📅</span>
+                    <a href="https://calendly.com/sjcvirtual" target="_blank">calendly.com/sjcvirtual</a>
+                </div>
+                
+                <div class="contact-item">
+                    <span>🕐</span>
+                    <span>Available 9am-8pm PST</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SJC Virtual. Professional Virtual Assistant Services.</p>
+        </div>
+    </footer>
+</body>
+</html>
